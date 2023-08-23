@@ -12,3 +12,15 @@ Parcel
 #Diganostic
 #Error Handling
 #Different build for dev & prod
+
+-Basic Building Blocks React
+#Scripts to run & build project
+#JSX
+#Transpilation JSX to React.CreateElement()
+#Bable
+#React Components
+#React Functional Component
+#Component Composisation
+#Write JS Expression using {}
+#Prevent attacks by JSX
+

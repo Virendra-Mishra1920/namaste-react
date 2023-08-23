@@ -1,42 +1,44 @@
-/* 
-    <div id="parent">
-        <div id="child">
-            <h1>I am tag h1</h1>
-            <h2>I am tag h2</h2>
-        </div>
-
-        <div id="child2">
-            <h1>I am tag h1</h1>
-             <h2>I am tag h2</h2>
-        </div>
-    </div>
-
-
-*/
-
-// JSX: we use JSX to create complext html syntax but not createHtml. 
-// CreateHtml is a core syntax of react itslef.
-
 import React from "react"
 import ReactDOM from 'react-dom'
 
-var parent= React.createElement("div", {id:"parent"}, 
-    [React.createElement("div", {id:"child"}, 
-    [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]),
 
-    React.createElement("div", {id:"child2"}, 
-    [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]),
+// React.createElement=ReactElement(js object)=> HTMLElement(render)
+var heading=React.createElement("h1",{id:"heading"},"I am core react heading!!");
 
-    React.createElement("div", {id:"child3"}, 
-    [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]),
-    ])
+console.log(heading)
+// babel transpile code into react code
+//jsx=Bable transpile to ReactElement(js object)=> HTMLElement(render)
+
+var ele=(
+    <span>React Element</span>
+)
  
-//  var heading=React.createElement(
-//     "h1",
-//     {id:"heading",xyz:"abc"},
-//     "Hello, World from React"
-//     );
+   
 
-    console.log(parent) // object
- var root=ReactDOM.createRoot(document.getElementById("root"));
- root.render(parent); //creating html element and putting into DOM
+// components
+//1. class based components
+//2. Functional components
+
+var num=123
+//Component Composisation
+const HeadingComponent=()=>{
+   return  (
+
+        <div className="container">
+        <h1>I am react functional component</h1>
+        </div>
+    )
+}
+
+var Title=(
+    
+    <h1> {ele} Namaste React
+        <HeadingComponent/>
+    </h1>
+)
+
+         
+var root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(Title);
+
+
